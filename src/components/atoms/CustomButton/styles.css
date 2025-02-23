@@ -1,0 +1,40 @@
+.button {
+  display: flex;
+  place-items: center;
+  padding-block: 12px;
+  padding-inline: 16px;
+  font-size: 1.3rem;
+  line-height: 1.2;
+  font-weight: 600;
+  border: none;
+  border-radius: var(--base-radius);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.button.prime {
+  background-color: var(--btn-prime-bg);
+  color: var(--light-text-color);
+}
+
+.button.prime:hover {
+  background-color: var(--btn-prime-hover);
+}
+
+.button.transparent {
+  background-color: transparent;
+  color: var(--dark-text-color);
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.button__label {
+  color: inherit;
+}
+
+.button__label::first-letter {
+  text-transform: uppercase;
+}

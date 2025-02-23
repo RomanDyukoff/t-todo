@@ -1,0 +1,83 @@
+.item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-block: 10px;
+  box-sizing: border-box;
+}
+
+.item:active {
+  cursor: grabbing;
+}
+
+.item.dragging {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #f9f9f9;
+  opacity: 0.8;
+  transform: scale(1.05);
+}
+
+.item__grab {
+  flex-shrink: 0;
+  cursor: grab;
+}
+
+.item__edit,
+.item__delete {
+  cursor: pointer;
+}
+
+.item__actions {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-left: auto;
+}
+
+.label {
+  flex: 1;
+  max-width: 80%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.label__input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--btn-prime-bg);
+}
+
+.label__name {
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1.14;
+  color: var(--dark-text-color);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.label__name-edit {
+  width: 100%;
+  border-radius: 3px;
+  border: none;
+  appearance: none;
+  padding-inline: 5px;
+  -webkit-box-shadow: 0px 0px 8px 2px rgba(34, 60, 80, 0.33);
+  -moz-box-shadow: 0px 0px 8px 2px rgba(34, 60, 80, 0.33);
+  box-shadow: 0px 0px 8px 2px rgba(34, 60, 80, 0.33);
+}
+
+.label__name-edit:focus {
+  border: none;
+  appearance: none;
+  outline: none;
+  -webkit-box-shadow: 0px 0px 8px 2px rgba(34, 60, 80, 0.33);
+  -moz-box-shadow: 0px 0px 8px 2px rgba(34, 60, 80, 0.33);
+  box-shadow: 0px 0px 8px 2px rgba(34, 60, 80, 0.33);
+}
+
+.label__input:checked + .label__name {
+  color: var(--grey-color);
+}
