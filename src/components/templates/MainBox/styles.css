@@ -2,4 +2,6 @@
   place-content: center;
   place-items: center;
   height: 100vh;
+  padding-inline: 12px;
+  padding-block: 24px;
 }

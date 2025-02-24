@@ -93,12 +93,16 @@ const useTodoStore = defineStore('todo-store', () => {
   // Смена позиции индексов для Drag and Drop
 
   const moveTodo = (draggedId: string, targetId: string) => {
-    const draggedIndex = todos.value.findIndex((todo) => todo.id === draggedId);
-    const targetIndex = todos.value.findIndex((todo) => todo.id === targetId);
+    const draggedIndex = currentTodos.value.findIndex(
+      (todo) => todo.id === draggedId
+    );
+    const targetIndex = currentTodos.value.findIndex(
+      (todo) => todo.id === targetId
+    );
 
     if (draggedIndex !== -1 && targetIndex !== -1) {
-      const [draggedItem] = todos.value.splice(draggedIndex, 1);
-      todos.value.splice(targetIndex, 0, draggedItem);
+      const [draggedItem] = currentTodos.value.splice(draggedIndex, 1);
+      currentTodos.value.splice(targetIndex, 0, draggedItem);
     }
   };
 
