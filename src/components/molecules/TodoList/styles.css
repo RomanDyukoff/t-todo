@@ -1,21 +1,37 @@
-.list {
+.todo-list {
   display: flex;
   flex-direction: column;
-  max-width: 450px;
-  height: 92px;
   width: 100%;
-  padding: 0 16px 0 0;
+  height: 92px;
+  padding: 0;
+  padding-right: 16px;
   margin: 0;
   list-style: none;
-  overflow: auto;
+  overflow-y: overlay;
 }
 
-.list::-webkit-scrollbar {
+.todo-list::-webkit-scrollbar {
   background-color: transparent;
   width: 4px;
 }
 
-.list::-webkit-scrollbar-thumb {
+.todo-list::-webkit-scrollbar-thumb {
   background-color: rgba(32, 36, 39, 0.1);
   border-radius: var(--base-radius);
+}
+
+.todo-list-enter-active,
+.todo-list-leave-active {
+  transition: all 0.3s ease;
+}
+
+.todo-list-enter-from,
+.todo-list-leave-to {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.todo-list-leave-active {
+  position: absolute;
+  transform: scale(1.1);
 }

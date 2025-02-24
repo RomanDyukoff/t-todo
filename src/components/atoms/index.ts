@@ -3,4 +3,3 @@ export { default as CustomImage } from '@/components/atoms/CustomImage/CustomIma
 export { default as InputText } from '@/components/atoms/InputText/InputText.vue';
 export { default as ProgressBoard } from '@/components/atoms/ProgressBoard/ProgressBoard.vue';
 export { default as SvgIcon } from '@/components/atoms/SvgIcon/SvgIcon.vue';
-export { default as TodoItem } from '@/components/atoms/TodoItem/TodoItem.vue';

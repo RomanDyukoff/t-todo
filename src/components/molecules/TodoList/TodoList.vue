@@ -1,18 +1,15 @@
 <template>
-  <ul class="list">
-    <TodoItem
-      v-for="todo in todos.todos"
-      :key="todo.id"
-      v-bind="todo"
-    />
-  </ul>
+  <transition-group name="todo-list" tag="ul" class="todo-list" aria-label="Список задач">
+    <TodoItem v-for="todo in todos" :key="todo.id" v-bind="todo" />
+  </transition-group>
 </template>
 
 <script lang="ts" setup>
-  import { TodoItem } from '@/components';
-  import { useTodoStore } from '@/stores';
+import { TodoItem } from '@/components';
+import type { ITodoList } from './TodoList.type';
 
-  const todos = useTodoStore();
+defineProps<ITodoList>();
+
 </script>
 
 <style scoped src="./styles.css" />

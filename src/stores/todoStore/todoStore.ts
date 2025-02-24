@@ -1,17 +1,19 @@
-import type { ITodoItem } from '@/components/atoms/TodoItem/TodoItem.type';
+import type { ITodoItem } from '@/components/molecules/TodoItem/TodoItem.type';
 import { fetchData } from '@/utils';
 import { defineStore } from 'pinia';
-import { computed, ref } from 'vue';
+import { computed, ref, watch } from 'vue';
 
 const useTodoStore = defineStore('todo-store', () => {
   const todos = ref<ITodoItem[]>([]);
+  const currentTodos = ref<ITodoItem[]>([...todos.value]);
 
+  const updateCurrentTodos = () => (currentTodos.value = [...todos.value]);
+
+  watch(todos, updateCurrentTodos);
   // CRUD операции
 
   const fetchTodo = async () => {
     const response = await fetchData<ITodoItem[]>('/todos');
-
-    console.log(response);
 
     todos.value = response;
   };
@@ -80,22 +82,12 @@ const useTodoStore = defineStore('todo-store', () => {
 
   // Фильтрация
 
-  const getActiveTodos = async () => {
-    const response = await fetchData<ITodoItem[]>('/todos?checked=eq.false', {
-      headers: {
-        Prefer: 'return=representation',
-      },
-    });
-    todos.value = response;
+  const showActiveTodos = () => {
+    currentTodos.value = todos.value.filter(({ checked }) => !checked);
   };
 
-  const getCompleteTodos = async () => {
-    const response = await fetchData<ITodoItem[]>('/todos?checked=eq.true', {
-      headers: {
-        Prefer: 'return=representation',
-      },
-    });
-    todos.value = response;
+  const showCompletedTodos = () => {
+    currentTodos.value = todos.value.filter(({ checked }) => checked);
   };
 
   // Смена позиции индексов для Drag and Drop
@@ -120,15 +112,16 @@ const useTodoStore = defineStore('todo-store', () => {
 
   return {
     todos,
+    currentTodos,
     fetchTodo,
     addTodo,
     removeTodo,
     moveTodo,
     updateTodo,
     markAllTodos,
-    getActiveTodos,
-    getCompleteTodos,
     deleteCompleteTodo,
+    showActiveTodos,
+    showCompletedTodos,
     currentState,
   };
 });
