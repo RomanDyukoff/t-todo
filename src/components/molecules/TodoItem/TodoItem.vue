@@ -112,8 +112,9 @@
     const targetElement = e.target as HTMLElement;
     const targetId = targetElement.closest('li')?.id;
     const draggedId = e.dataTransfer?.getData('text/plain');
+    const container = (e.target as HTMLElement).closest('ul')?.parentElement;
 
-    if (draggedId && targetId && draggedId !== targetId) {
+    if (draggedId && targetId && draggedId !== targetId && container) {
       moveTodo(draggedId, targetId);
     }
   };

@@ -9,6 +9,7 @@
   font-weight: 600;
   border: none;
   border-radius: var(--base-radius);
+  white-space: nowrap;
   cursor: pointer;
   transition: background-color 0.2s ease;
 }
