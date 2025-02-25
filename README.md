@@ -1,39 +1,27 @@
-# todo
+# Задачи
+  выполнил требования из тз:
+    - реализовал действия с тудушками
+    - отрисовку кнопок в зависимости от состояния
+    - тёмную тему
+    - сохранение тудушек в публичном Rest [использовал supabase](https://supabase.com/docs)
+    - сделал адаптив
+    - развернул приложение в [Versel](https://t-todo-six.vercel.app/)
+    - сделал ключи приватными в .env файле
+  
+## Трудности
+  - долго искал публичный Rest
+  - в тз не было я и не сделал (немного попытался но не стал тратить время) при драг дропе перемешенные тудушки обновляли порядок на сервере
 
-This template should help get you started developing with Vue 3 in Vite.
+## Структура
+  - Создал структуру папок
+  - atoms: просто компоненты
+  - molecules: небольшие блоки состоящие из атомов
+  - organisms: компонент состоит из атомов и молекул и содержит основной контент страницы
+  - pages: сама страница
+  - templates: базовый шаблон для страницы
+  - stores: папка для сторов
+  - untils: папка для вспомогательных функций
+  - constants: там храняться константы для приложения, у меня там только эндпоинты
 
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
-bun install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-bun dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-bun run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-bun lint
-```
+## Время
+  не удавалось сесть поработать (обстоятельства), делал по немногу каждый день в сумме примерно ~12ч с настройками, поиском Rest (это отняло много времени)
