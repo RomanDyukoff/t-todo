@@ -19,12 +19,17 @@
 
 .item__grab {
   flex-shrink: 0;
+  filter: var(--svg-todo-color);
   cursor: grab;
 }
 
 .item__edit,
 .item__delete {
   cursor: pointer;
+}
+
+.item__edit {
+  filter: var(--svg-todo-color);
 }
 
 .item__actions {
@@ -36,6 +41,7 @@
 }
 
 .label {
+  position: relative;
   flex: 1;
   max-width: 80%;
   display: flex;
@@ -53,29 +59,34 @@
   font-size: 1.4rem;
   font-weight: 400;
   line-height: 1.14;
-  color: var(--dark-text-color);
+  color: var(--todo-content-color);
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
 .label__name-edit {
-  width: 100%;
+  position: absolute;
+  right: 0;
+  width: 92%;
+  height: 30px;
   border-radius: 3px;
+  background-color: transparent;
   border: none;
+  color: var(--todo-content-color);
   appearance: none;
   padding-inline: 5px;
-  -webkit-box-shadow: 0px 0px 8px 2px rgba(34, 60, 80, 0.33);
-  -moz-box-shadow: 0px 0px 8px 2px rgba(34, 60, 80, 0.33);
-  box-shadow: 0px 0px 8px 2px rgba(34, 60, 80, 0.33);
+  -webkit-box-shadow: var(--edit-input);
+  -moz-box-shadow: var(--edit-input);
+  box-shadow: var(--edit-input);
 }
 
 .label__name-edit:focus {
   border: none;
   appearance: none;
   outline: none;
-  -webkit-box-shadow: 0px 0px 8px 2px rgba(34, 60, 80, 0.33);
-  -moz-box-shadow: 0px 0px 8px 2px rgba(34, 60, 80, 0.33);
-  box-shadow: 0px 0px 8px 2px rgba(34, 60, 80, 0.33);
+  -webkit-box-shadow: var(--edit-input);
+  -moz-box-shadow: var(--edit-input);
+  box-shadow: var(--edit-input);
 }
 
 .label__input:checked + .label__name {

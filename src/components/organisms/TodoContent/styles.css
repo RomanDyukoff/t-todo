@@ -4,7 +4,7 @@
   max-height: 719px;
   height: 100%;
   border-radius: 2.4rem;
-  background-color: var(--light-text-color);
+  background-color: var(--content-background);
   padding: clamp(18px, calc(18px + (18 * (100vw - 768px) / 512)), 32px);
 }
 
@@ -30,7 +30,7 @@
   font-size: 2.4rem;
   line-height: 1.21;
   font-weight: 700;
-  color: var(--dark-text-color);
+  color: var(--text-color);
   margin: 0;
 }
 
@@ -65,15 +65,14 @@
   margin-top: auto;
 }
 
+.content-footer__icon {
+  filter: invert(72%) sepia(10%) saturate(354%) hue-rotate(169deg)
+    brightness(83%) contrast(82%);
+}
+
 .content-footer > p {
   font-size: 1.4rem;
   line-height: 1.14;
   font-weight: 400;
   color: var(--grey-color);
-}
-
-@media (max-width: 1280px) {
-  .content__list {
-    /* max-height: 300px; */
-  }
 }

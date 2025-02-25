@@ -6,14 +6,14 @@
   gap: 12px;
   padding: 16px;
   border-radius: var(--base-radius);
-  background-color: rgba(32, 36, 39, 0.05);
+  background-color: var(--progress-card-bg);
 }
 
 .progress-card__total {
   font-size: 1.2rem;
   line-height: 1.33;
   font-weight: 600;
-  color: var(--dark-text-color);
+  color: var(--progress-card-text);
   opacity: 50%;
 }
 
@@ -22,7 +22,7 @@
   font-size: 1.4rem;
   line-height: 1.21;
   font-weight: 700;
-  color: var(--dark-text-color);
+  color: var(--progress-card-text);
 }
 
 .progress-card__bar {
@@ -30,7 +30,7 @@
   height: 4px;
   border-radius: var(--base-radius);
   border: none;
-  background-color: rgba(32, 36, 39, 0.1);
+  background-color: var(--progress-bg-color);
 }
 
 .progress-card__bar::-moz-progress-bar {
@@ -38,7 +38,7 @@
   height: 4px;
   border-radius: var(--base-radius);
   border: none;
-  background-color: rgba(32, 36, 39, 0.1);
+  background-color: var(--progress-bg-color);
 }
 
 .progress-card__bar::-webkit-progress-bar {
@@ -46,7 +46,7 @@
   height: 4px;
   border-radius: var(--base-radius);
   border: none;
-  background-color: rgba(32, 36, 39, 0.1);
+  background-color: var(--progress-bg-color);
 }
 
 .progress-card__bar::-webkit-progress-value {

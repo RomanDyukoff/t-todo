@@ -15,7 +15,7 @@
 }
 
 .todo-list::-webkit-scrollbar-thumb {
-  background-color: rgba(32, 36, 39, 0.1);
+  background-color: var(--scroll-color);
   border-radius: var(--base-radius);
 }
 
@@ -27,10 +27,10 @@
 .todo-list-enter-from,
 .todo-list-leave-to {
   opacity: 0;
-  transform: translateY(30px);
+  transform: translateY(-30px);
 }
 
 .todo-list-leave-active {
   position: absolute;
-  transform: scale(1.1);
+  transform: translateY(-30px);
 }

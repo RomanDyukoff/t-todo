@@ -1,8 +1,7 @@
-/* color palette from <https://github.com/vuejs/theme> */
 :root {
   --btn-prime-bg: #2578f4;
   --btn-prime-hover: #3d86f3;
-  --body-bg-gradient: linear-gradient(
+  --body-bg-light: linear-gradient(
     303.79deg,
     #f0c3fc -53.74%,
     #d7befc -4.64%,
@@ -11,60 +10,62 @@
     #94bdfc 127.47%,
     #8ec5fc 170.73%
   );
+  --body-bg-dark: linear-gradient(
+    0deg,
+    #84fab0 0%,
+    #85f9bc 21.87%,
+    #88f8d7 42.19%,
+    #8bf6f5 60.94%,
+    #8eddf5 80.73%,
+    #8fd3f4 100%
+  );
   --light-text-color: #fff;
   --dark-text-color: #202427;
   --grey-color: #8f99a3;
-  --base-radius: 8px;
-
-  /* --vt-c-white: #ffffff;
-  --vt-c-white-soft: #f8f8f8;
-  --vt-c-white-mute: #f2f2f2;
-
-  --vt-c-black: #181818;
-  --vt-c-black-soft: #222222;
-  --vt-c-black-mute: #282828;
-
-  --vt-c-indigo: #2c3e50;
-
-  --vt-c-divider-light-1: rgba(60, 60, 60, 0.29);
-  --vt-c-divider-light-2: rgba(60, 60, 60, 0.12);
-  --vt-c-divider-dark-1: rgba(84, 84, 84, 0.65);
-  --vt-c-divider-dark-2: rgba(84, 84, 84, 0.48);
-
-  --vt-c-text-light-1: var(--vt-c-indigo);
-  --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
-  --vt-c-text-dark-1: var(--vt-c-white);
-  --vt-c-text-dark-2: rgba(235, 235, 235, 0.64); */
+  --progress-color-pink: #ef5da8;
+  --progress-color-purple: #5d5fef;
+  --progress-light-bg: #2024271a;
+  --progress-dark-bg: #8f99a3;
+  --progress-card-light: #2024270d;
+  --progress-card-dark: #ffffff0d;
+  --edit-light-input: 0px 0px 8px 2px rgba(34, 60, 80, 0.33);
+  --edit-dark-input: 0px 0px 8px 2px rgb(255 255 255 / 33%);
+  --svg-color-light: filter: invert(9%) sepia(10%) saturate(885%)
+    hue-rotate(163deg) brightness(94%) contrast(87%);
+  --svg-color-dark: invert(99%) sepia(86%) saturate(0%) hue-rotate(220deg)
+    brightness(105%) contrast(100%);
+  --scroll-color-light: #2024271a;
+  --scroll-color-dark: #8f99a3;
 }
 
-/* semantic color variables for this project */
-/* :root {
-  --color-background: var(--vt-c-white);
-  --color-background-soft: var(--vt-c-white-soft);
-  --color-background-mute: var(--vt-c-white-mute);
+:root {
+  --body-bg-gradient: var(--body-bg-light);
+  --content-background: var(--light-text-color);
+  --text-color: var(--dark-text-color);
+  --progress-bg-color: var(--progress-light-bg);
+  --progress-card-bg: var(--progress-card-light);
+  --progress-card-text: var(--dark-text-color);
+  --edit-input: var(--edit-light-input);
+  --todo-content-color: var(--dark-text-color);
+  --svg-todo-color: var(--svg-color-light);
+  --scroll-color: var(--scroll-color-light);
+  --base-radius: 8px;
+}
 
-  --color-border: var(--vt-c-divider-light-2);
-  --color-border-hover: var(--vt-c-divider-light-1);
-
-  --color-heading: var(--vt-c-text-light-1);
-  --color-text: var(--vt-c-text-light-1);
-
-  --section-gap: 160px;
-} */
-
-/* @media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
   :root {
-    --color-background: var(--vt-c-black);
-    --color-background-soft: var(--vt-c-black-soft);
-    --color-background-mute: var(--vt-c-black-mute);
-
-    --color-border: var(--vt-c-divider-dark-2);
-    --color-border-hover: var(--vt-c-divider-dark-1);
-
-    --color-heading: var(--vt-c-text-dark-1);
-    --color-text: var(--vt-c-text-dark-2);
+    --body-bg-gradient: var(--body-bg-dark);
+    --content-background: var(--dark-text-color);
+    --text-color: var(--grey-color);
+    --progress-bg-color: var(--progress-dark-bg);
+    --progress-card-text: var(--light-text-color);
+    --progress-card-bg: var(--progress-card-dark);
+    --edit-input: var(--edit-dark-input);
+    --svg-todo-color: var(--svg-color-dark);
+    --todo-content-color: var(--light-text-color);
+    --scroll-color: var(--scroll-color-dark);
   }
-} */
+}
 
 *,
 *::before,
